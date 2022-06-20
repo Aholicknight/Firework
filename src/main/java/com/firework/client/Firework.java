@@ -1,7 +1,6 @@
 package com.firework.client;
 
 import com.firework.client.Features.CommandsSystem.CommandManager;
-import com.firework.client.Features.CustomMainMenu.OnGuiOpenEvent;
 import com.firework.client.Features.Modules.Module;
 import com.firework.client.Features.Modules.ModuleManager;
 import com.firework.client.Implementations.Managers.Parser.JsonParser;
@@ -33,7 +32,6 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
-import xyz.firework.autentification.HwidCheck.HwidManager;
 
 @Mod(modid="firework", name="FireWork Client", version="0.1")
 public class Firework {
@@ -76,7 +74,6 @@ public class Firework {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         FIREWORK_DIRECTORY = Minecraft.getMinecraft().gameDir + "\\Firework\\";
-        HwidManager.hwidCheck();
         SystemTray.sysTray();
         JsonParser.parse();
         JsonPrefixPraser.parse();
@@ -96,7 +93,7 @@ public class Firework {
         Display.setTitle("Loading Firework (FMLInitializationEvent)");
         SoundUtill.playSound(new ResourceLocation("firework/audio/loaded.wav"));
         Display.setTitle("Firework | " + Minecraft.getMinecraft().getSession().getUsername() + "");
-        MinecraftForge.EVENT_BUS.register(new OnGuiOpenEvent());
+        //MinecraftForge.EVENT_BUS.register(new OnGuiOpenEvent());
     }
 
     @SubscribeEvent

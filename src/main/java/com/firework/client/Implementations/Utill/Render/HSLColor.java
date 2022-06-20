@@ -36,7 +36,7 @@ public class HSLColor {
         r = Math.min(r, 1.0f);
         g = Math.min(g, 1.0f);
         b = Math.min(b, 1.0f);
-        return new Color(r, g, b, (float)255);
+        return new Color(r, g, b, 1);
     }
 
     private static float HueToRGB(float p, float q, float h) {
