@@ -15,6 +15,9 @@
 `gradlew setupDecompWorkspace` <br>
 `gradlew build`
 
+### mirror download
+[mirrored.to](https://www.mirrored.to/files/QDHZOKO9/firework-1.0.jar_links)
+
 <strong>ur done!</strong>
 
 ### yessir
