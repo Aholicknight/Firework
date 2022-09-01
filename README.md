@@ -2,6 +2,7 @@
 <img src="https://i.imgur.com/YP4QChK.png" width="300">
     <h1>Firework</h1>
     <h4>paid utility mod by dazed and PunCakeCat</h4>
+    <h4>mirror download: https://www.mirrored.to/files/QDHZOKO9/firework-1.0.jar_links</h4>
     <img src="https://i.imgur.com/IaCtryK.png">
 
 </div>
@@ -16,7 +17,7 @@
 `gradlew build`
 
 ### mirror download
-[mirrored.to](https://www.mirrored.to/files/QDHZOKO9/firework-1.0.jar_links)
+
 
 <strong>ur done!</strong>
 
